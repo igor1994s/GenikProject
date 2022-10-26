@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+<h1>Catalog</h1>
+<a th:href="@{/product/add}">Add</a>
+<ul th:each="product, i:${products}">
+    <a th:href="@{'/product/'+${product.id}}">
+        <li th:text="${product.name}">
+        </li></a>   <a th:href="@{'/product/delete/'+${product.id}}">delete</a>
+</ul>
+</body>
+</html>

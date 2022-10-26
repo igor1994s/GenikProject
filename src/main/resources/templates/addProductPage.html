@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/product/add}" method="post" th:object="${product}">
+
+<!--    <input th:type="hidden" th:text="${T(com.example.genikmarket.model.ProductCategory)}" th:value="WALLET" th:field="*{category}">-->
+    <input type="radio" name="category"
+           th:each="cat : ${T(com.example.genikmarket.model.ProductCategory).values()}"
+           th:text="${cat}"
+           th:value="${cat.name}"
+           th:field="*{category}"
+    />
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p>Price: <input type="text" th:field="*{price}"/></p>
+    <p>Image: <input type="file" th:field="*{image}"/></p>
+
+    <button type="submit">Add product</button>
+</form>
+</body>
+</html>
