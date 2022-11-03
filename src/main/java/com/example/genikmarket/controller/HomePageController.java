@@ -7,6 +7,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomePageController {
 
+    @GetMapping("/")
+    public ModelAndView homePage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("homePage");
+        return modelAndView;
+    }
+
     @GetMapping("/delivery-and-payment")
     public ModelAndView shippingAdndPayment(ModelAndView modelAndView){
         modelAndView.setViewName("homePage/deliveryAndPayment");

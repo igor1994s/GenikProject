@@ -40,9 +40,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(
                         request -> request.antMatchers(
-                                        "/", "/registration").permitAll()
+                                        "/","/product/all","/homePage","/delivery-and-payment","/manufacturing-process",
+                                        "/interesting-facts","/contacts", "/registration", "/security/**").permitAll()
                                 .anyRequest().authenticated())
-                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/homePage")
+                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/")
                 .and()
                 .logout().deleteCookies("JSESSIONID")
                 .and()

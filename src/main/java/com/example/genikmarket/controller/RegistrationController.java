@@ -32,13 +32,6 @@ public class RegistrationController {
         return modelAndView;
     }
 
-    @GetMapping("/homePage")
-    public ModelAndView homePage() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("homePage");
-        return modelAndView;
-    }
-
     @GetMapping("/login")
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
